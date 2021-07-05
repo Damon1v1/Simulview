@@ -1,33 +1,28 @@
 const express = require('express');
 const router = express.Router();
 
-// Getting all Users
-router.get('/', (req, res) => {
+// Getting all Users and Creating one
+
+router
+  .get('/', (req, res) => {
   res.send('Get all user')
-})
-
-// Getting one User
-router.get('/:id', (req, res) => {
-  res.send(req.params.id)
-})
-
- 
-// Creating a User
-router.post('/', (req, res) => {
+  })
+  .post('/', (req, res) => {
   res.send('Creating one user')
-})
+  })
 
 
-// Updating a User
-router.patch('/:id', (req, res) => {
+// Getting, Updating, Deleting one User
+router
+  .get('/:id', (req, res) => {
   res.send(req.params.id)
-})
-
-
-// Deleting a User
-router.delete('/:id', (req, res) => {
+  })
+  .patch('/:id', (req, res) => {
   res.send(req.params.id)
-})
+  })
+  .delete('/:id', (req, res) => {
+    res.send(req.params.id)
+  })
 
 
 module.exports = router;

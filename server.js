@@ -3,11 +3,14 @@ const express = require('express');
 const path = require('path');
 const mongoose = require('mongoose');
 const io = require('socket.io');
+const routes = require("./routes");
 
 
 
 const app = express();
 const PORT = process.env.PORT || 5000;
+
+app.use(routes);
 
 // mongoose connection
 mongoose.connect(process.env.DATABASE_URL, {
