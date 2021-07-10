@@ -4,8 +4,8 @@ const express = require('express');
 const cors = require('cors');
 const socketIo = require('socket.io')
 const path = require('path');
-const mongoose = require('mongoose');
-const routes = require("./routes");
+const routes = require('./routes');
+const connectDB = require('./config/db');
 
 
 
@@ -15,11 +15,7 @@ const PORT = process.env.PORT || 5000;
 app.use(routes);
 
 // mongoose connection
-mongoose.connect(process.env.DATABASE_URL, {
-  useCreateIndex: true,
-  useNewUrlParser: true
-});
-const db = mongoose.connection
+connectDB();
 
 // checking to make sure mongoose is connected
 db.on('error', (error) => console.log(error))
