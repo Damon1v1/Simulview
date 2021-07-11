@@ -19,8 +19,8 @@ app.use(routes);
 connectDB();
 
 // checking to make sure mongoose is connected
-db.on('error', (error) => console.log(error))
-db.once('open', () => console.log('Connected to Database'))
+// db.on('error', (error) => console.log(error))
+// db.once('open', () => console.log('Connected to Database'))
 
 // initiate middleware
 app.use(express.urlencoded({ extended: true }));
