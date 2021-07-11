@@ -1,4 +1,4 @@
 {
-    "mongoURI": "",
-    "jwtSecret": ""
+    "mongoURI": "mongodb+srv://Damon1v1:detectivecomics1@cluster0.sv33s.mongodb.net/Simulview?retryWrites=true&w=majority",
+    "jwtSecret": "secretsecretsecret"
 }
