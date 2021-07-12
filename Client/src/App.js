@@ -1,31 +1,20 @@
+import { ChatEngine } from 'react-chat-engine';
+
+//import ChatFeed from './components/ChatFeed';
+//import LoginForm from './components/LoginForm';
 import './App.css';
-import background from './images/background.jpg'
-import { Navigation } from 'react';
-import { Link } from 'react-router-dom';
-import Header from './components/header/title'
-import Footer from './components/footer/footer'
 
-
-function App() {
+const App = () => {
   return (
-    <div
-      class='bg_image'
-        style={{
-          backgroundImage: 'url('+background+')',
-          backgroundSize: 'cover',
-          height: '100vh',
-          marginTop: '-25px'
-        }}
-    >
-      <Header style={{color:'white'}} className="header-color" title={<Link style={{textDecoration: 'none', color: 'white'}} to="/">Simulview</Link>}>
-          <Navigation>
-              <Link to="/loginPage">Login</Link>
-              <Link to="/profile">Profile</Link>
-          </Navigation>
-      </Header>
-      <Footer />
-    </div>
+    <ChatEngine
+      height="100vh"
+      projectID='b4198e88-d501-49d4-8fd8-6fc0a4d41981'
+      userName='simulview123'
+      userSecret='123'
+    />
   );
-}
+};
+
+// infinite scroll, logout, more customizations...
 
 export default App;
